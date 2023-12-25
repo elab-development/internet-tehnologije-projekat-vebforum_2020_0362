@@ -16,4 +16,19 @@ class Post extends Model
         'numberOfLikes',
         'numberOfDislikes' 
     ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function thread()
+    {
+        return $this->belongsTo(Thread::class);
+    }
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
 }
