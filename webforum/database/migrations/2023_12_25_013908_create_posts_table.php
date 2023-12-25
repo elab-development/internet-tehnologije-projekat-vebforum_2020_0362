@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('name',50);
             $table->string('text',150);
             $table->date('dateOfCreation');
-            $table->int('numberOfLikes');
-            $table->int('numberOfDislikes');
+            $table->integer('numberOfLikes');
+            $table->integer('numberOfDislikes');
             $table->timestamps();
         });
     }

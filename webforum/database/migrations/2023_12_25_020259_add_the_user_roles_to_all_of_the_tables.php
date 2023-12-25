@@ -11,13 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('comments', function (Blueprint $table) {
-            $table->id();
-            $table->string('text',150);
-            $table->date('dateOfCreation');
-            $table->integer('numberOfLikes');
-            $table->integer('numberOfDislikes');
-            $table->timestamps();
+        Schema::table('users', function (Blueprint $table) {
+            $table->string('isAdmin')->default(false); 
+            $table->string('isModerator')->default(false); 
         });
     }
 
@@ -26,6 +22,10 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('comments');
+        Schema::table('users', function (Blueprint $table) {
+            $table ->dropColumn('isAdmin');
+            $table ->dropColumn('isModerator');
+        });
     }
 };
+

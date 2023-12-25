@@ -11,13 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('comments', function (Blueprint $table) {
-            $table->id();
-            $table->string('text',150);
-            $table->date('dateOfCreation');
-            $table->integer('numberOfLikes');
-            $table->integer('numberOfDislikes');
-            $table->timestamps();
+        Schema::table('posts', function (Blueprint $table) {
+            $table->string('status')->default('Objavljen'); 
         });
     }
 
@@ -26,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('comments');
+        Schema::table('posts', function (Blueprint $table) {
+            $table ->dropColumn('status');
+        });
     }
 };
