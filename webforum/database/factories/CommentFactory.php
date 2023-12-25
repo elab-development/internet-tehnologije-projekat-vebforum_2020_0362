@@ -19,10 +19,10 @@ class CommentFactory extends Factory
     public function definition(): array
     {
         return [
-                'text' =>$this->faker->paragraph(),
+                'text' =>$this->faker->sentence(),
                 'dateOfCreation' =>now(),
-                'numberOfLikes' =>numberBetween($min = 100, $max = 1000),
-                'numberOfDislikes' =>numberBetween($min = 100, $max = 1000),
+                'numberOfLikes' =>$this->faker->numberBetween($min = 100, $max = 1000),
+                'numberOfDislikes' =>$this->faker->numberBetween($min = 100, $max = 1000),
                 'user_id' =>User::factory(), 
                 'post_id' =>Post::factory(), 
 

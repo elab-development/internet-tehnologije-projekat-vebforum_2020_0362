@@ -19,7 +19,7 @@ class ThreadFactory extends Factory
     {
         return [
             'name' =>$this->faker->name(), 
-            'description' =>$this->faker->sentance(),
+            'description' =>$this->faker->sentence(),
             'dateOfCreation' =>now(),
             'user_id' =>User::factory(), 
         ];
