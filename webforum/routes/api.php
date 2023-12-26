@@ -7,6 +7,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ThreadController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\SearchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,6 +45,9 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     
     //THREADS
     Route::resource('threads', ThreadController::class);
+
+    //pretraga Thread po imenu
+    Route::get('/search/threads', [SearchController::class, 'searchThread']);
 
     //POSTS
     Route::post('posts', [PostController::class, 'store']);
