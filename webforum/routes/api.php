@@ -25,6 +25,9 @@ use App\Http\Controllers\SearchController;
 Route::post('register', [AuthController::class, 'register']);
 Route::post('login', [AuthController::class, 'login']);
 
+//Reset lozinke
+Route::post('resetPassword',[AuthController::class,'resetPassword']);
+
 //USERS
 Route::get('users', [UserController::class, 'index']);
 Route::get('users/{id}', [UserController::class, 'show']); 
