@@ -8,6 +8,8 @@ use App\Models\Comment;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Validator;
 
+use Illuminate\Support\Facades\Auth;
+
 class CommentController extends Controller
 {
     public function index()
@@ -26,9 +28,10 @@ class CommentController extends Controller
     public function store(Request $request)
     {
 
+    $user_id = Auth::user()->id; 
+
     $validator = Validator::make($request->all(), [
         'text' => 'required',
-        'user_id' => 'required',
         'post_id' => 'required',
 
     ]);
@@ -37,13 +40,22 @@ class CommentController extends Controller
         return response()->json($validator->errors());
     }
 
+        //MODERATOR
+        $isModerator = Auth::user()->isModerator;
+        //ADMIN
+        $isAdmin = Auth::user()->isAdmin;
+    
+        if ($isModerator || $isAdmin) {
+            return response()->json(['error' => 'Unauthorized: Administrator or moderator cant create any comments!!!'], 403);
+        }
+
 
     $comment = new Comment();
     $comment->text = $request->text;
     $comment->dateOfCreation = Carbon::now()->format('Y-m-d');
     $comment->numberOfLikes = 0;
     $comment->numberOfDislikes = 0;
-    $comment->user_id = $request->user_id;
+    $comment->user_id = $user_id;
     $comment->post_id = $request->post_id;
 
     $comment->save();
@@ -54,9 +66,11 @@ class CommentController extends Controller
 
     public function update(Request $request, $id)
     {
+        $user_id = Auth::user()->id; 
+        $comment_user_id = Comment::where('id', $id)->value('user_id');
+
         $validator = Validator::make($request->all(), [
             'text' => 'required',
-            'user_id' => 'required',
             'post_id' => 'required',
         ]);
 
@@ -64,6 +78,14 @@ class CommentController extends Controller
             $errors = $validator->errors();
             return response()->json($errors);
         }
+    //MODERATOR
+    $isModerator = Auth::user()->isModerator;
+    //ADMIN
+    $isAdmin = Auth::user()->isAdmin;
+
+    if ($isModerator || $isAdmin) {
+        return response()->json(['error' => 'Unauthorized: Administrator or moderator cant alter any comments!!!'], 403);
+    }
 
         $comment = Comment::findOrFail($id);
 
@@ -71,7 +93,7 @@ class CommentController extends Controller
         $comment->dateOfCreation = Carbon::now()->format('Y-m-d');
         $comment->numberOfLikes = 0;
         $comment->numberOfDislikes = 0;
-        $comment->user_id = $request->user_id;
+        $comment->user_id = $comment_user_id;
         $comment->post_id = $request->post_id;
 
         $comment->save();
@@ -82,9 +104,17 @@ class CommentController extends Controller
 
     public function updateText(Request $request, $id)
      {
+
          $request->validate([
              'text' => 'required'
          ]);
+
+         //MODERATOR
+         $isModerator = Auth::user()->isModerator;
+
+         if (!$isModerator) {
+             return response()->json(['error' => 'Unauthorized: This is the function that can only be done by an administrator or by the user that created this comment!!!'], 403);
+         }
 
          $comment = Comment::findOrFail($id);
 
@@ -97,6 +127,13 @@ class CommentController extends Controller
 
     public function destroy($id)
     {
+         //MODERATOR
+         $isModerator = Auth::user()->isModerator;
+
+         if (!$isModerator) {
+             return response()->json(['error' => 'Unauthorized: This is the function that can only be done by an administrator or by the user that created this comment!!!'], 403);
+         }
+
         $comment = Comment::findOrFail($id);
         $comment->delete();
         return response()->json('You have successfuly deleted a comment!');

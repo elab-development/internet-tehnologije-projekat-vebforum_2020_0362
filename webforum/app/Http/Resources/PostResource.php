@@ -14,6 +14,7 @@ class PostResource extends JsonResource
      */
     public function toArray(Request $request): array
     {
+
         return [
             'ID: ' => $this->resource->id,
             'POST NAME: ' => $this->resource->name,
@@ -22,9 +23,16 @@ class PostResource extends JsonResource
             'NUMBER OF 👍: '=> $this->resource->numberOfLikes,
             'NUMBER OF 👎: '=> $this->resource->numberOfDislikes,
             'STATUS OF THE POST: '=> $this->resource->status,
-            'POST CREATED BY USER: '=> new UserResource($this->resource->user->name),
-            'POST IS THE PART OF THE THREAD: '=> new ThreadResource($this->resource->thread->name),
+            'POST CREATED BY USER: '=> (new UserResource(optional($this->resource->user)))->getName(),
+            'POST IS THE PART OF THE THREAD: '=> (new ThreadResource(optional($this->resource->thread)))->getName(),
             'COMMENTS ON THIS POST: '=> CommentResource::collection(optional($this->resource->comments))->toArray($request),
+        ];
+    }
+
+    public function getName(): array
+    {
+        return [
+            'NAME: ' => $this->resource->name,
         ];
     }
 }

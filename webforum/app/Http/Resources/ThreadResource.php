@@ -5,7 +5,7 @@ namespace App\Http\Resources;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class ThreadRezource extends JsonResource
+class ThreadResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -19,7 +19,14 @@ class ThreadRezource extends JsonResource
             'THREAD NAME: ' => $this->resource->name,
             'DESCRIPTION: '=> $this->resource->description,
             'DATE OF CREATION: '=>$this->resource->dateOfCreation,
-            'THREAD CREATED BY USER: '=> new UserResource($this->resource->user),
+            'THREAD CREATED BY USER: '=> (new UserResource(optional($this->resource->user)))->getName(),
+        ];
+    }
+
+    public function getName(): array
+    {
+        return [
+            'NAME: ' => $this->resource->name,
         ];
     }
 }
