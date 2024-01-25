@@ -15,18 +15,18 @@ class ThreadResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'ID: ' => $this->resource->id,
-            'THREAD NAME: ' => $this->resource->name,
-            'DESCRIPTION: '=> $this->resource->description,
-            'DATE OF CREATION: '=>$this->resource->dateOfCreation,
-            'THREAD CREATED BY USER: '=> (new UserResource(optional($this->resource->user)))->getName(),
+            'id' => $this->resource->id,
+            'name' => $this->resource->name,
+            'description'=> $this->resource->description,
+            'date'=>$this->resource->dateOfCreation,
+            'user'=> (new UserResource(optional($this->resource->user)))->getName(),
         ];
     }
 
     public function getName(): array
     {
         return [
-            'NAME: ' => $this->resource->name,
+            'name' => $this->resource->name,
         ];
     }
 }

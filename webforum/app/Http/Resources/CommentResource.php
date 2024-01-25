@@ -15,13 +15,13 @@ class CommentResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'ID: ' => $this->resource->id,
-            'COMMENT TEXT: '=> $this->resource->text,
-            'DATE OF CREATION: '=>$this->resource->dateOfCreation,
-            'NUMBER OF 👍: '=> $this->resource->numberOfLikes,
-            'NUMBER OF 👎: '=> $this->resource->numberOfDislikes,
-            'COMMENT CREATED BY USER: '=> (new UserResource(optional($this->resource->user)))->getName(),
-            'COMMENT IS PART OF THIS POST: '=> (new PostResource(optional($this->resource->post)))->getName(),
+            'id' => $this->resource->id,
+            'text'=> $this->resource->text,
+            'date'=>$this->resource->dateOfCreation,
+            'likes'=> $this->resource->numberOfLikes,
+            'dislikes'=> $this->resource->numberOfDislikes,
+            'user'=> (new UserResource(optional($this->resource->user)))->getName(),
+            'post'=> (new PostResource(optional($this->resource->post)))->getName(),
         ];
     }
 }

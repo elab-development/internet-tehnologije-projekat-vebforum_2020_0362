@@ -15,17 +15,17 @@ class UserResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'USER ID: ' => $this->resource->id,
-            'NAME: ' => $this->resource->name,
-            'EMAIL: ' => $this->resource->email,
-            'NUMBER OF CREATED THREADS: ' => count($this->resource->threads),
-            'NUMBER OF CREATED POSTS: ' => count($this->resource->posts),
-            'NUMBER OF COMMENTS: ' => count($this->resource->comments),
-            'USER ROLE: ' => $this->resource->isAdmin
-                ? 'This user is a webforum administrator.'
+            'id' => $this->resource->id,
+            'name' => $this->resource->name,
+            'email' => $this->resource->email,
+            'threads' => count($this->resource->threads),
+            'posts' => count($this->resource->posts),
+            'comments' => count($this->resource->comments),
+            'user_role' => $this->resource->isAdmin
+                ? 'admin'
                 : ($this->resource->isModerator
-                    ? 'This user is a webforum moderator.'
-                    : 'This user is a regular webforum user.'),
+                    ? 'moderator'
+                    : 'user'),
         ];
     }
 
@@ -33,7 +33,7 @@ class UserResource extends JsonResource
     public function getName(): array
     {
         return [
-            'NAME: ' => $this->resource->name,
+            'name' => $this->resource->name,
         ];
     }
 

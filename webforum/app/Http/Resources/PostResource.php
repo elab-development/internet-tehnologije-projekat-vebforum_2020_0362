@@ -16,16 +16,16 @@ class PostResource extends JsonResource
     {
 
         return [
-            'ID: ' => $this->resource->id,
-            'POST NAME: ' => $this->resource->name,
-            'TEXT: '=> $this->resource->text,
-            'DATE OF CREATION: '=>$this->resource->dateOfCreation,
-            'NUMBER OF 👍: '=> $this->resource->numberOfLikes,
-            'NUMBER OF 👎: '=> $this->resource->numberOfDislikes,
-            'STATUS OF THE POST: '=> $this->resource->status,
-            'POST CREATED BY USER: '=> (new UserResource(optional($this->resource->user)))->getName(),
-            'POST IS THE PART OF THE THREAD: '=> (new ThreadResource(optional($this->resource->thread)))->getName(),
-            'COMMENTS ON THIS POST: '=> CommentResource::collection(optional($this->resource->comments))->toArray($request),
+            'id' => $this->resource->id,
+            'name' => $this->resource->name,
+            'text'=> $this->resource->text,
+            'date'=>$this->resource->dateOfCreation,
+            'likes'=> $this->resource->numberOfLikes,
+            'dislikes'=> $this->resource->numberOfDislikes,
+            'status'=> $this->resource->status,
+            'user'=> (new UserResource(optional($this->resource->user)))->getName(),
+            'thread'=> (new ThreadResource(optional($this->resource->thread)))->getName(),
+            'comments'=> CommentResource::collection(optional($this->resource->comments))->toArray($request),
         ];
     }
 
