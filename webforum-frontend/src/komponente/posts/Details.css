@@ -1,0 +1,111 @@
+
+.details-page {
+  background-image: url('https://png.pngtree.com/thumb_back/fw800/background/20231017/pngtree-watercolor-abstract-art-light-blue-and-beige-color-palette-with-cream-image_13685717.png');
+  text-align: justify;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+  justify-content: center;
+  padding-left: 160px;
+  height: 700px;
+}
+
+.details-container {
+  background-color: #d7cdb0;
+  color: #542e22;
+  padding: 60px;
+  width: 80%;
+  display: flex;
+  border-radius: 15px;
+  flex-direction: column;
+  text-align: justify;
+  justify-content: center;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  
+}
+
+.details-container:hover {
+  background-color: #e6e0ce;
+  transform: scale(1.02); /* Povećava veličinu na hover */
+}
+
+.details-header {
+  margin-bottom: 20px;
+}
+
+.details-title {
+  color: #542e22;
+  margin: 0;
+}
+
+.details-text {
+  color: #542e22;
+  margin-bottom: 10px;
+}
+
+.details-date {
+  color: #542e22;
+  font-style: italic;
+}
+
+.details-info {
+  color: #542e22;
+  margin-bottom: 10px;
+}
+.details-likes-dislikes {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: aliceblue;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 120px;
+  width: 30%;
+  border-radius: 15px;
+
+}
+
+.icons-likes, .icons-dislikes {
+  margin-top: 10px;
+}
+
+.icons-likes strong, .icons-dislikes strong {
+  
+  color: #542e22;
+}
+
+.icons-likes strong , .icons-dislikes strong {
+  color: pink;
+}
+
+.icons-likes strong > svg, .icons-dislikes strong > svg {
+  margin-right: 5px;
+  font-size: 20px;
+}
+
+.back-to-posts-button {
+  margin-top: 50px;
+  margin-left: 20px;
+  width: 30%;
+  background-color: #b2765d;
+  color: #542e22;
+  padding: 20px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s; 
+  display: inline-flex;
+  align-items: center;
+}
+
+.back-to-posts-button:hover {
+  background-color: #a9d9da;
+  color: #f4f4f0;
+}
+
