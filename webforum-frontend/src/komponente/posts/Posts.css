@@ -1,0 +1,109 @@
+.posts {
+  padding-top: 60px;
+  background-color: #f4f4f0;
+  color: #542e22;
+  text-align: center;
+  min-height: 800px;
+  margin-bottom: 60px;
+  margin: 0;
+  margin-right: 0;
+  padding-right: 0;
+  background-image: url('https://images.pexels.com/photos/255379/pexels-photo-255379.jpeg?cs=srgb&dl=pexels-miguel-%C3%A1-padri%C3%B1%C3%A1n-255379.jpg&fm=jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.posts-search {
+  margin-bottom: 20px;
+}
+
+.search-input {
+  
+  padding: 10px;
+  border: 2px solid #e6e0ce;
+  background-color: #e6e0ce;
+  border-radius: 10px;
+  width: 70%; 
+  margin: 0 auto; 
+  transition: border-color 0.3s; 
+}
+
+
+.search-input:not(:placeholder-shown) {
+  border-color: #b2765d;
+}
+
+/* Dodavanje boje za tekst kada nije placeholder */
+.search-input:not(:placeholder-shown) {
+  color: #542e22;
+}
+
+.posts-section {
+  margin-top: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.post {
+  background-color: #d7cdb0;
+  color: #542e22;
+  padding: 20px;
+  border-radius: 8px;
+  width: 30%;
+}
+
+.pagination {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+.page-number {
+
+  margin-left: 10px;
+  margin-right: 20px;
+}
+
+.page-number, .details-button {
+  background-color: #b2765d;
+  color: #542e22;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s; 
+}
+
+.page-number:hover, .details-button:hover {
+  background-color: #a9d9da;
+  color: #f4f4f0;
+}
+
+.post {
+  background-color: #d7cdb0;
+  color: #542e22;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 8px;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: justify;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  
+}
+
+.post:hover {
+  background-color: #e6e0ce;
+  transform: scale(1.02); /* Povećava veličinu na hover */
+}
+
+.post h2 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+
+

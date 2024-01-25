@@ -17,6 +17,10 @@ function App() {
           path="/posts/:id" 
           element={<Details/>} 
           />
+          <Route 
+          path="/posts" 
+          element={<Posts/>} 
+          />
          
         </Routes>
     </BrowserRouter>
