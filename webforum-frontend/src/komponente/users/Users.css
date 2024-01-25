@@ -1,0 +1,42 @@
+.users-container {
+    padding: 20px;
+    background-color: #f4f4f0;
+    color: #542e22;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center; 
+  }
+  
+  .users-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .user-item {
+    background-color: #d7cdb0;
+    color: #542e22;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  
+    width: 700px;
+  }
+  
+  .user-item p {
+    margin: 5px 0;
+  }
+  
+  .loading-error {
+    color: #d9534f;
+    font-weight: bold;
+  }
+  
+  .loading-message {
+    font-style: italic;
+  }

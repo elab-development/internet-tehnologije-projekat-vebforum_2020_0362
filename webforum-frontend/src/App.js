@@ -3,6 +3,8 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './komponente/home/Home';
 import Details from './komponente/posts/Details';
+import Posts from './komponente/posts/Posts';
+import Users from './komponente/users/Users';
 
 function App() {
   return (
@@ -20,6 +22,10 @@ function App() {
           <Route 
           path="/posts" 
           element={<Posts/>} 
+          />
+           <Route 
+          path="/users" 
+          element={<Users/>} 
           />
          
         </Routes>
