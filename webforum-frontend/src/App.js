@@ -2,6 +2,7 @@ import './App.css';
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './komponente/home/Home';
+import Details from './komponente/posts/Details';
 
 function App() {
   return (
@@ -11,6 +12,10 @@ function App() {
         <Route 
           path="/" 
           element={<Home/>} 
+          />
+          <Route 
+          path="/posts/:id" 
+          element={<Details/>} 
           />
          
         </Routes>
