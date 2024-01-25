@@ -1,0 +1,33 @@
+.home-container {
+    text-align: center;
+    padding-top: 30px;
+    height: 700px;
+    color: #542e22;
+    background-image: url('https://png.pngtree.com/thumb_back/fw800/background/20231017/pngtree-watercolor-abstract-art-light-blue-and-beige-color-palette-with-cream-image_13685717.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .quote-container {
+    margin-top: 20px;
+    padding: 10px;
+    background: linear-gradient(to right, #70b4b5,#f3edd9, #e8e8cd, #f3edd9, #6dc3c4);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  
+}
+  
+  .quote-container blockquote {
+    font-style: italic;
+  }
+  
+  .images-container {
+    margin-top: 20px;
+  }
+  
+  .images-container img {
+    width: 400px;
+    height: 300px;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
