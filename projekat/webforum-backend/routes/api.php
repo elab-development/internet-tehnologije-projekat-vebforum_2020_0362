@@ -21,16 +21,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// public routes 
-
-// Route::resource('post',PostController::class);
-//start comment
+// javne rute!
 
 Route::get('/comment/{id}', [CommentController::class, 'show']);
 Route::get('/getAllComments', [CommentController::class, 'getAllComments']);
-
-
-// end comment
 
 Route::put('/user/{id}', [AuthController::class, 'update']);
 Route::get('/user/{id}', [AuthController::class, 'show']);
@@ -64,9 +58,9 @@ Route::get('/token', function () {
 });
 
 
-// protected routes
-Route::delete('/comment/{id}', [CommentController::class, 'destroy']);
+// zasticene rute!
 
+Route::delete('/comment/{id}', [CommentController::class, 'destroy']);
 
 Route::group(['middleware' => ['auth:sanctum']], function () {
 
