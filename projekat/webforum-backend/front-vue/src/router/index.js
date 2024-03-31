@@ -6,9 +6,12 @@ import Login from "../views/Login.vue";
 import LoginAdmin from "../views/LoginAdmin.vue";
 import navBar from "../components/navBar.vue";
 import Auth from "../components/Auth.vue";
+import ProfileUser from "../views/ProfileUser.vue";
+import dashboardAdmin from "../views/dashboardAdmin.vue";
+import Allusers from "../views/AllusersVue.vue";
+
 
 import store from "../store";
-
 const routes = [
     {
         path: '/',
@@ -18,6 +21,9 @@ const routes = [
         children: [
 
             { path: '/homePage', name: 'HomePage', component: HomePage },
+            { path: '/profileUser', name: 'ProfileUser', component: ProfileUser },
+            { path: '/dashboardAdmin', name: 'dashboardAdmin', component: dashboardAdmin },
+            { path: '/Allusers', name: 'Allusers', component: Allusers },
         ]
     },
 
@@ -56,5 +62,4 @@ const router = createRouter({
     routes
 
 })
-
 export default router;
