@@ -41,7 +41,7 @@
                   <MenuButton
                     class="max-w-xs bg-gray-800 rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                     <span class="sr-only">Open user menu</span>
-                    <img class="h-8 w-8 rounded-full" alt="" />
+                    <img class="h-8 w-8 rounded-full" src="https://avatars.githubusercontent.com/u/154702539?v=4" alt="" />
                   </MenuButton>
                 </div>
                 <transition enter-active-class="transition ease-out duration-100"
@@ -60,6 +60,7 @@
             </div>
           </div>
           <div class="-mr-2 flex md:hidden">
+
             <!-- Mobile menu button -->
             <DisclosureButton
               class="bg-gray-800 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
@@ -90,10 +91,12 @@
             users
           </router-link>
         </div>
+
+        
         <div class="pt-4 pb-3 border-t border-gray-700">
           <div class="flex items-center px-5">
             <div class="flex-shrink-0">
-              <img class="h-10 w-10 rounded-full" alt="" />
+              <img class="h-10 w-10 rounded-full" src="https://avatars.githubusercontent.com/u/154702539?v=4" alt="" />
             </div>
             <div class="ml-3">
               <div class="text-base font-medium leading-none text-white">{{ user.name }}</div>

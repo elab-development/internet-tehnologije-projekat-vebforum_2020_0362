@@ -24,7 +24,7 @@
             <div class="bg-white p-3 border-t-4 border-green-400">
               <div class="image overflow-hidden">
                 <img class="h-auto w-full mx-auto"
-                  src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+                  src="https://avatars.githubusercontent.com/u/154702539?v=4" alt="">
               </div>
               <h1 class="text-gray-900 font-bold text-xl leading-8 my-1">{{ user.info.nom }}</h1>
   
@@ -33,11 +33,11 @@
                 <li class="flex items-center py-3">
                   <span>Status</span>
                   <span class="ml-auto"><span
-                      class="bg-green-500 py-1 px-2 rounded text-white text-sm">Active</span></span>
+                      class="bg-green-500 py-1 px-2 rounded text-white text-sm">Aktivan</span></span>
                 </li>
                 <li class="flex items-center py-3">
-                  <span>Member since</span>
-                  <span class="ml-auto">{{ user.info.created_at.substring(0,4) }}</span>
+                  <span>Korisnik od</span>
+                  <span class="ml-auto">{{ user.info.created_at.substring(0,4) }}. godine</span>
                 </li>
               </ul>
             </div>
@@ -47,10 +47,12 @@
   
             <!-- End of friends card -->
           </div>
+
           <!-- Right Side -->
   
           <div class="w-full md:w-9/12 mx-2 h-64">
-            <!-- Profile tab -->
+          <!-- Profile tab -->
+
             <!-- About Section -->
             <form @submit="updateUser">
   
@@ -63,43 +65,43 @@
                         d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                     </svg>
                   </span>
-                  <span class="tracking-wide">About</span>
+                  <span class="tracking-wide">Informacije o korisniku - azuriranje:</span>
                 </div>
                 <div class="text-gray-700">
                   <div class="grid md:grid-cols-2 text-sm">
+                    <div class="grid grid-cols-2 mt-4">
+                      <div class="px-4 py-2 font-semibold">Ime:</div>
+                      <input placeholder="Ime..." v-model="user.info.nom"
+                        class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-3  py-2"
+                        required="required" type="text" name="integration[shop_name]" id="integration_shop_name">
+                    </div>
                     <div class="grid grid-cols-2  mt-4 ">
-                      <div class="px-4 py-2 font-semibold">Prenom</div>
-                      <input v-model="user.info.prenom" placeholder="prenom"
+                      <div class="px-4 py-2 font-semibold">Prezime:</div>
+                      <input v-model="user.info.prenom" placeholder="Prezime..."
                         class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-3  py-2"
                         required="required" type="text" name="integration[shop_name]" id="integration_shop_name">
                     </div>
                     <div class="grid grid-cols-2 mt-4">
-                      <div class="px-4 py-2 font-semibold">Nom</div>
-                      <input placeholder="Nom" v-model="user.info.nom"
-                        class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-3  py-2"
-                        required="required" type="text" name="integration[shop_name]" id="integration_shop_name">
-                    </div>
-                    <div class="grid grid-cols-2 mt-4">
-                      <div class="px-4 py-2 font-semibold">email</div>
-                      <input placeholder="Email " v-model="user.info.email"
+                      <div class="px-4 py-2 font-semibold">E-mail adresa</div>
+                      <input placeholder="E-mail adresa" v-model="user.info.email"
                         class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4 py-2"
                         required="required" type="email" name="integration[shop_name]" id="integration_shop_name">
                     </div>
                     <div class="grid grid-cols-2 mt-4">
-                      <div class="px-4 py-2 font-semibold"> date de naissance</div>
-                      <input placeholder="date de naissance" v-model="user.info.date_naissance"
+                      <div class="px-4 py-2 font-semibold"> Datum rodjenja:</div>
+                      <input placeholder="Datum rodjenja..." v-model="user.info.date_naissance"
                         class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-3  py-2"
                         required="required" type="text" name="integration[shop_name]" id="integration_shop_name">
                     </div>
                     <div class="grid grid-cols-2 mt-4">
-                      <div class="px-4 py-2 font-semibold"> old password</div>
-                      <input placeholder="old password" v-model="user.pass.old"
+                      <div class="px-4 py-2 font-semibold"> Stari password</div>
+                      <input placeholder="Stari password..." v-model="user.pass.old"
                         class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-3  py-2"
                         type="password" name="integration[shop_name]" id="integration_shop_name">
                     </div>
                     <div class="grid grid-cols-2 mt-4 ">
-                      <div class="px-4 py-2 font-semibold">new password</div>
-                      <input placeholder="new password" v-model="user.pass.new"
+                      <div class="px-4 py-2 font-semibold">Novi password</div>
+                      <input placeholder="Novi password..." v-model="user.pass.new"
                         class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-3  py-2"
                         type="password" name="integration[shop_name]" id="integration_shop_name">
                     </div>
@@ -107,15 +109,16 @@
                   </div>
                 </div>
                 <button type="submit"
-                  class="block w-full text-blue-800 text-sm font-semibold rounded-lg hover:bg-gray-100 focus:outline-none focus:shadow-outline focus:bg-gray-100 hover:shadow-xs p-3 my-4">Update
+                  class="block w-full border text-blue-800 text-sm font-semibold rounded-lg hover:bg-teal-100 focus:outline-none focus:shadow-outline focus:bg-gray-100 hover:shadow-xs p-3 my-4">Azuriraj podatke o sebi!
                 </button>
               </div>
             </form>
   
             <div class="my-4">
-              <h1 class="text-gray-900 font-bold text-xl text-center leading-8 my-1">MY POSTS</h1>
+              <h1 class="text-gray-900 font-bold text-xl text-center leading-8 my-1">Moje objave na Web Forumu:</h1>
             </div>
   
+            <!-- Ucitavanje postova o sebi na stranici Profile -->
             <post>
   
             </post>
@@ -213,14 +216,14 @@
                 store
                   .dispatch('updateUser', this.user)
                   .then((response) => {
-                    console.log("Bien updated")
+                    console.log("Uspesno azurirani podaci")
                     this.user.pass.new = "";
                     this.user.pass.old = "";
                     this.msgUpdate = true
                   })
   
               } else {
-                console.log("ereur mdp")
+                console.log("Greska")
               };
   
             })
@@ -232,7 +235,7 @@
             .then((response) => {
               this.msgUpdate = true
   
-              console.log("Bien updated")
+              console.log("Uspesno azurirani podaci")
   
             })
         }
