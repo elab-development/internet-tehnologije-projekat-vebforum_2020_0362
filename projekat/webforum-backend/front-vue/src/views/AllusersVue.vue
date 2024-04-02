@@ -1,27 +1,5 @@
-<!--
-  This example requires Tailwind CSS v2.0+ 
-  
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
--->
 <template>
-    <!-- tailwind.config.js -->
-    <!-- tailwind.config.js -->
 
-
-
-
-    <!-- component -->
     <div>
 
         <div x-data="{ sidebarOpen: false }" class="flex h-screen bg-gray-200">
@@ -33,7 +11,7 @@
 
                 <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-200">
                     <div class="container mx-auto px-6 py-8">
-                        <h3 class="text-gray-700 text-3xl font-medium">All users : </h3>
+                        <h3 class="text-gray-700 text-3xl font-medium">Svi korisnici: </h3>
 
 
 
@@ -50,17 +28,17 @@
                                             <tr>
                                                 <th class=" px-6 py-3 border-b border-gray-200 bg-gray-50 text-left
                                                 text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                                    Nom </th>
+                                                    Ime </th>
                                                 <th
                                                     class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                                    Prenom</th>
+                                                    Prezime</th>
                                                 <th
                                                     class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                                    Email</th>
+                                                    E-Mail</th>
                                                 <th
                                                     class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                                    age</th>
-                                                <th class="px-6 py-3 border-b border-gray-200 bg-gray-50"> Supprimer
+                                                    Starost</th>
+                                                <th class="px-6 py-3 border-b border-gray-200 bg-gray-50"> Obrisi
                                                 </th>
                                             </tr>
                                         </thead>

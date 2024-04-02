@@ -24,9 +24,9 @@
             <div class="bg-white p-3 border-t-4 border-green-400">
               <div class="image overflow-hidden">
                 <img class="h-auto w-full mx-auto"
-                  src="https://lavinephotography.com.au/wp-content/uploads/2017/01/PROFILE-Photography-112.jpg" alt="">
+                  src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
               </div>
-              <h1 class="text-gray-900 font-bold text-xl leading-8 my-1">Jane Doe</h1>
+              <h1 class="text-gray-900 font-bold text-xl leading-8 my-1">{{ user.info.nom }}</h1>
   
               <ul
                 class="bg-gray-100 text-gray-600 hover:text-gray-700 hover:shadow py-2 px-3 mt-3 divide-y rounded shadow-sm">
@@ -37,7 +37,7 @@
                 </li>
                 <li class="flex items-center py-3">
                   <span>Member since</span>
-                  <span class="ml-auto">{{ user.created_at }}</span>
+                  <span class="ml-auto">{{ user.info.created_at.substring(0,4) }}</span>
                 </li>
               </ul>
             </div>
@@ -144,6 +144,7 @@
             "nom": "",
             "prenom": "",
             "date_naissance": "",
+            "created_at":"",
             "email": "",
             "pass": "",
           },

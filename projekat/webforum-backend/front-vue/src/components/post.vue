@@ -9,7 +9,6 @@
                 <!--header-->
                 <div class="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
                     <h3 class="text-3xl font-semibold">
-                        modifier post
                     </h3>
                     <button
                         class="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none">
@@ -28,9 +27,7 @@
                 </div>
                 <div class=" flex-1 px-2 pt-2 mx-10 m-2">
                     <select v-model="this.categEdit" required
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                        <!-- <option>{{ this.categEdit }}</option> -->
-
+                        class="bg-gray-100 border border-gray-900 text-gray-900 text-sm rounded-lg focus:ring-blue-800 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                         <option v-for="elem in $store.state.categorie.data" :value="elem.id" :key="elem.id"
                             :selected="elem.nom_categorie == this.categEdit">
                             <div>{{
@@ -71,12 +68,12 @@
 
         <div class="flex items-center	justify-between">
             <div class="gap-3.5	flex items-center ">
-                <img src="https://images.unsplash.com/photo-1617077644557-64be144aa306?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
+                <img src="https://avatars.githubusercontent.com/u/154702539?v=4"
                     class="object-cover bg-yellow-500 rounded-full w-10 h-10" />
                 <div class="flex flex-col">
-                    <b class="mb-2 capitalize"> {{ elem.utilisateur.prenom }} {{ elem.utilisateur.nom }}</b>
-                    <time datetime={{elem.created_at}} class="text-gray-400 text-xs">{{ elem.created_at }}
-                    {{ elem.categorie.nom_categorie}}
+                    <b class=" capitalize"> {{ elem.utilisateur.prenom }} {{ elem.utilisateur.nom }}</b>
+                    <time datetime={{elem.created_at}} class="text-gray-700 text-xs">{{ elem.created_at.substring(0,10) }} | 
+                    <b class="capitalize">{{ elem.categorie.nom_categorie}}</b>
                     </time>
                 </div> 
 
@@ -84,9 +81,9 @@
             <div class="rounded-full h-3.5 flex	items-center justify-center">
 
                 <FIcons v-if="this.$parent.$options.name == 'profile' || this.$parent.$options.name=='dashboardAdmin'" id="delete" :icon="['fas', 'trash']"
-                    class="h-5 w-5 mt-6" @click="deletePost(elem.id)" />
+                    class="h-5 w-5 mt-3" @click="deletePost(elem.id)" />
                 <FIcons v-if="this.$parent.$options.name == 'profile'" id="delete" :icon="['fas', 'edit']"
-                    class="h-5 w-5 mt-6 mx-2" v-on:click="toggleModal(elem)" />
+                    class="h-5 w-5 mt-3 mx-2" v-on:click="toggleModal(elem)" />
             </div>
         </div>
         <div ata-modal-toggle="defaultModal" class="whitespace-pre-wrap mt-7">{{ elem.sjt_post }}</div>
@@ -128,7 +125,7 @@
         <div  v-if="this.$parent.$options.name!='dashboardAdmin'"
             class="relative flex items-center self-center w-full max-w-xxl p-4 overflow-hidden text-gray-600 focus-within:text-gray-400">
             <img class='w-10 h-10 object-cover rounded-full shadow mr-2 cursor-pointer' alt='User avatar'
-                src='https://images.unsplash.com/photo-1477118476589-bff2c5c4cfbb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=200&q=200'>
+                src='https://avatars.githubusercontent.com/u/154702539?v=4'>
             <span class="absolute inset-y-0 right-0 flex items-center pr-6">
 
             </span>
@@ -147,7 +144,7 @@
         <!-- comments recent -->
         <div class="flex  bg-white dark:bg-gray-800" v-for="ele in elem.comments" :key="ele.id">
             <div class="bg-white dark:bg-gray-800 text-black  dark:text-gray-200 p-4 antialiased flex max-w-lg">
-                <img class="rounded-full h-8 w-8  mt-1 " src="https://picsum.photos/id/1027/200/200" />
+                <img class="rounded-full h-8 w-8  mt-1 " src="https://avatars.githubusercontent.com/u/154702539?v=4" />
                 <div>
                     <div class="bg-gray-100   dark:bg-gray-700 rounded-3xl px-4 pt-2 pb-2.5">
                         <div class="font-semibold text-sm leading-relaxed">{{ ele.user.prenom }} {{ ele.user.nom }}

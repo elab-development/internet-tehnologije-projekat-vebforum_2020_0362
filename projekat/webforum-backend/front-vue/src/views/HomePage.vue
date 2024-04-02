@@ -1,37 +1,20 @@
-<!-- This example requires Tailwind CSS v2.0+ -->
 <template>
 
 
     <main class=" overflow-x-hidden overflow-y-auto bg-gray-100">
-  
-      <!-- <button @click="getAllPosts"> teeeeeest</button> -->
-      <!-- <div class="container mx-auto px-6 py-8"> -->
-      <!-- <h3 class="text-gray-700 text-3xl font-medium">Dashboard</h3> -->
-      <!-- {{ --addpost --}} -->
-  
-      <!-- posts -->
-  
-      <!--middle wall-->
-  
-  
-  
-  
+
       <div v-if="msgAdd" class="bg-green-100 rounded-lg py-5 px-6 mb-4 text-base text-green-700 mb-3" role="alert">
-        Successfully added </div>
+        Uspesno objavljeno! </div>
   
   
   
       <div class="border-1   mt-6 bg-white rounded-2xl p-4  mx-auto   flex-1     max-w-screen-md ">
-        <h1 class="mb-4 text-xl font-bold text-gray-700">Categories</h1>
+        <h1 class="mb-4 text-xl font-bold text-gray-700">Kategorije</h1>
         <button v-for="elem in $store.state.categorie.data" :key="elem.id"
-          class="inline-block border border-teal-500 text-teal-500 rounded-full px-6 py-2 mr-4"
+          class="inline-block border border-teal-800 text-teal-500 rounded-full hover:bg-gray-700 hover:text-white px-6 py-2 m-2"
           @click="getAllPostsByCategorie(elem.id)">{{ elem.nom_categorie }} </button>
   
-  
       </div>
-  
-  
-  
   
       <div class="relative w-auto my-6 mx-auto w-full max-w-3xl ">
   
@@ -41,7 +24,7 @@
           <div class="flex">
   
             <div class="flex-1 m-2">
-              <h2 class="px-4 py-2 text-xl font-semibold text-black">Home</h2>
+              <h2 class="px-4 py-2 text-xl font-semibold text-black">Napisi objavu</h2>
             </div>
             <div class="flex-1 px-4 py-2 m-2">
             </div>
@@ -49,13 +32,11 @@
           <hr class="border-gray-600">
           <div class=" flex-1 px-2 pt-2 mx-10 m-2">
   
-            <select v-model="this.postData.categorie_id" required
-              class="border border-gray-300 rounded-full text-gray-600 h-10 pl-5 pr-10 bg-white hover:border-gray-400 focus:outline-none appearance-none">
-              <option selected disabled>Choose a category</option>
-              <option :value=elem.id v-for="elem in $store.state.categorie.data" :key="elem.id">{{ elem.nom_categorie }}
-              </option>
-  
+            <select v-model="postData.categorie_id" required class="border border-gray-300 rounded-full text-gray-600 h-10 pl-5 pr-10 bg-white hover:border-gray-400 focus:outline-none appearance-none">
+              <option disabled value="">Odaberi kategoriju...</option>
+              <option :value="parseInt(elem.id)" v-for="elem in $store.state.categorie.data" :key="elem.id">{{ elem.nom_categorie }}</option>
             </select>
+
           </div>
           <!--middle creat tweet-->
           <!-- <form @click.prevent> -->
@@ -64,22 +45,21 @@
             <div class="flex">
               <div class="m-2 w-10 py-1">
                 <img class="inline-block h-10 w-10 rounded-full"
-                  src="https://pbs.twimg.com/profile_images/1121328878142853120/e-rpjoJi_bigger.png" alt="" />
+                  src="https://avatars.githubusercontent.com/u/154702539?v=4" alt="" />
               </div>
   
   
   
               <div class="flex-1 px-2 pt-2 mt-2">
                 <textarea v-model="postData.sjt_post" class=" bg-transparent text-gray-400 font-medium text-lg w-full"
-                  rows="2" cols="50" placeholder="What's happening?" required></textarea>
+                  rows="2" cols="50" placeholder="Napisi objavu koja je direktno upucena navedenoj kategoriji" required></textarea>
               </div>
             </div>
   
   
             <!-- //categorie Post -->
-  
-  
             <!--middle creat tweet below icons-->
+
             <div class="flex">
               <div class="w-10"></div>
               <div class="w-64 px-2">
@@ -135,7 +115,7 @@
                 <button type="submit"
                   class="bg-blue-400 mt-5 hover:bg-blue-600 text-white font-bold py-2 px-8 rounded-full mr-8 float-right"
                   @click="addPost">
-                  Post
+                  Objavi
                 </button>
               </div>
             </div>
@@ -205,11 +185,16 @@
         msgAdd: false,
         dislikesId: "",
         testCate: true,
-        showModal: false
-  
+        showModal: false,
+        selectedCategoryId: null
       };
     },
   
+    created(){
+      if (this.$store.state.categorie.data.length > 0) {
+      this.selectedCategoryId = this.$store.state.categorie.data[0].id;
+    }
+    },
   
     components: {
       BanIcon,

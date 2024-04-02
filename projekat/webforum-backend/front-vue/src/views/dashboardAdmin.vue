@@ -1,24 +1,6 @@
-<!--
-  This example requires Tailwind CSS v2.0+ 
-  
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
--->
+
 <template>
-    <!-- tailwind.config.js -->
 
-
-    <!-- component -->
     <div>
 
         <div  class="flex h-screen bg-gray-200">
@@ -30,7 +12,7 @@
                
                 <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-200">
                     <div class="container mx-auto px-6 py-8">
-                        <h3 class="text-gray-700 text-3xl font-medium">Posts and comments : </h3>
+                        <h3 class="text-gray-700 text-3xl font-medium">Sve objave i komentari: </h3>
 
                        
 
