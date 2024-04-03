@@ -128,14 +128,6 @@
   
   
       <post nameMethod="t">
-        <!-- <template #postDelete>
-                <FIcons id="delete" :icon="['fas', 'trash']" class="h-5 w-5 mt-6" @click="deletePost(elem.id)" />
-  
-          </template>
-       
-       <template #commentsDelete>
-        <FIcons id="delete"  :icon="['fas', 'trash']" class="h-5 w-5 mt-6" @click="deleteComment(ele.id_comment)" />
-        </template> -->
   
       </post>
   
@@ -155,13 +147,11 @@
   <script>
   import { computed } from '@vue/reactivity'
   import { BanIcon, HeartIcon, PencilAltIcon } from '@heroicons/vue/outline'
-  // import { BanIcon, HeartIcon, PencilAltIcon } from '@heroicons/vue/solid'
   import post from '../components/post.vue'
   import { useRouter } from 'vue-router';
   import store from "../store";
   import { mapActions } from "vuex";
   
-  // import Post1 from '../components/post.vue';
   export default {
     name: "homePage",
     data() {

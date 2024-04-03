@@ -81,9 +81,9 @@
             <div class="rounded-full h-3.5 flex	items-center justify-center">
 
                 <FIcons v-if="this.$parent.$options.name == 'profile' || this.$parent.$options.name=='dashboardAdmin'" id="delete" :icon="['fas', 'trash']"
-                    class="h-5 w-5 mt-3" @click="deletePost(elem.id)" />
+                    class="h-5 w-5 mt-6" @click="deletePost(elem.id)" />
                 <FIcons v-if="this.$parent.$options.name == 'profile'" id="delete" :icon="['fas', 'edit']"
-                    class="h-5 w-5 mt-3 mx-2" v-on:click="toggleModal(elem)" />
+                    class="h-5 w-5 mt-6 mx-2" v-on:click="toggleModal(elem)" />
             </div>
         </div>
         <div ata-modal-toggle="defaultModal" class="whitespace-pre-wrap mt-7">{{ elem.sjt_post }}</div>
@@ -151,7 +151,16 @@
                         </div>
                         <div class="text-normal leading-snug md:leading-normal"> {{ ele.sjt_comments }}</div>
                     </div>
-                    <div class="text-sm ml-4 mt-0.5 text-gray-500 dark:text-gray-400">14 w</div>
+                    <div class="text-sm ml-4 mt-0.5 text-gray-500 dark:text-gray-400">{{ new Date(ele.created_at).toLocaleString('en-US', { 
+                                                                                                                                year: 'numeric', 
+                                                                                                                                month: 'short', 
+                                                                                                                                day: '2-digit',
+                                                                                                                                hour: 'numeric',
+                                                                                                                                minute: 'numeric',
+                                                                                                                                second: 'numeric',
+                                                                                                                                hour12: false
+                                                                                                                            }) }}
+    </div>
 
                 </div>
             </div>
@@ -179,6 +188,7 @@ export default {
             comment: {
                 "post_id": "",
                 "sjt_comments": "",
+                "created_at":"",
                 "utilisateur_id": sessionStorage.getItem("idUser")
 
             },

@@ -23,6 +23,8 @@ use Illuminate\Support\Facades\Route;
 
 // javne rute!
 
+//Route::group(['middleware' => ['web']], function () {
+
 Route::get('/comment/{id}', [CommentController::class, 'show']);
 Route::get('/getAllComments', [CommentController::class, 'getAllComments']);
 
@@ -57,6 +59,7 @@ Route::get('/token', function () {
     return csrf_token();
 });
 
+//});
 
 // zasticene rute!
 

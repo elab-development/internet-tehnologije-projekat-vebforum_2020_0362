@@ -14,7 +14,7 @@
       </div>
       <!-- End of Navbar -->
       <div v-if="msgUpdate" class="bg-yellow-100 rounded-lg py-5 px-6 mb-4 text-base text-yellow-700 mb-3" role="alert">
-        Bien modifier </div>
+        Podaci izmenjeni uspesno! </div>
   
       <div class="container mx-auto my-5 p-5">
         <div class="md:flex no-wrap md:-mx-2 ">
@@ -130,7 +130,7 @@
   </template>
   
   <script>
-  import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
+
   import { BanIcon, HeartIcon, PencilAltIcon } from '@heroicons/vue/outline'
   import post from '../components/post.vue'
   import { mapActions } from "vuex";

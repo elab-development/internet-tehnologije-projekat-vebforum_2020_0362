@@ -14,8 +14,9 @@ class AuthController extends Controller
     //
     public function index()
     {
-        return utilisateur::all();
+        return utilisateur::orderBy('nom','asc')->get();
     }
+
     public function destroy($id)
     {
         return utilisateur::destroy(($id));

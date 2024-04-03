@@ -13,11 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('admins', function (Blueprint $table) {
-            $table->id()->autoIncrement();
-            $table->String("reff_admin")->unique();
-            $table->String("password");
-            $table->timestamps();
+
+        Schema::table('admins', function (Blueprint $table) {
+            $table->renameColumn('password', 'pass');
         });
     }
 
@@ -28,6 +26,8 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('admins');
+        Schema::table('admins', function (Blueprint $table) {
+            $table->renameColumn('pass', 'password');
+        });
     }
 };
