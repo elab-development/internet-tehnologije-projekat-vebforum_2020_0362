@@ -111,10 +111,6 @@ class PostController extends Controller
      * @param  string  $name
      * @return \Illuminate\Http\Response
      */
-    public function search($name)
-    {
-        return post::where("sjt_post", 'like', '%' . $name . '%')->get();
-    }
 
     public function getPostsByUser($id)
     {
