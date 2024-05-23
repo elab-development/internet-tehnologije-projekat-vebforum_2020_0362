@@ -42,7 +42,7 @@
 
             <div class="mb-3 space-y-2 w-full text-xs">
                 <label class="font-semibold text-gray-600 py-2">Password <abbr title="required">*</abbr></label>
-                <input placeholder="password" v-model="user.pass"
+                <input placeholder="Password" v-model="user.pass"
                     class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4"
                     required="required" type="password" name="integration[shop_name]" id="integration_shop_name">
                 <p class="text-red text-xs hidden">Obavezno polje</p>
@@ -52,7 +52,7 @@
         <div class="mb-3 space-y-2 w-full text-xs" v-if="this.$parent.$options.name == 'SignInForm'">
             <router-link :to="{ name: 'Register' }"> <a href="#"
                     class="font-medium text-indigo-600 hover:text-indigo-500">
-                    Resetuj sifru... </a></router-link>
+                    Kreiraj nalog </a></router-link>
             </div>
 
         <div>
