@@ -17,7 +17,7 @@
         </p>
     </div>
     <div v-if="error" class="bg-red-100 rounded-lg py-5 px-6 mb-4 text-base text-red-700 mb-3" role="alert">
-        E-mail adresa ili lozinka nisu ispravne! Pokusaj ponovo.
+        E-mail adresa ili lozinka nisu ispravne! Pokušaj ponovo.
     </div>
 
     <form class="mt-8 space-y-6" @submit="login">

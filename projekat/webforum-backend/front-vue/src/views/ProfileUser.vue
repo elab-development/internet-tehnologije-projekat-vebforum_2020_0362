@@ -1,4 +1,3 @@
-<!-- This example requires Tailwind CSS v2.0+ -->
 <template>
     <!-- component -->
   
@@ -14,7 +13,7 @@
       </div>
       <!-- End of Navbar -->
       <div v-if="msgUpdate" class="bg-yellow-100 rounded-lg py-5 px-6 mb-4 text-base text-yellow-700 mb-3" role="alert">
-        Podaci izmenjeni uspesno! </div>
+        Podaci izmenjeni uspešno! </div>
   
       <div class="container mx-auto my-5 p-5">
         <div class="md:flex no-wrap md:-mx-2 ">
@@ -65,7 +64,7 @@
                         d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                     </svg>
                   </span>
-                  <span class="tracking-wide">Informacije o korisniku - azuriranje:</span>
+                  <span class="tracking-wide">Informacije o korisniku - ažuriranje:</span>
                 </div>
                 <div class="text-gray-700">
                   <div class="grid md:grid-cols-2 text-sm">
@@ -82,13 +81,13 @@
                         required="required" type="text" name="integration[shop_name]" id="integration_shop_name">
                     </div>
                     <div class="grid grid-cols-2 mt-4">
-                      <div class="px-4 py-2 font-semibold">E-mail adresa</div>
+                      <div class="px-4 py-2 font-semibold">E-mail adresa:</div>
                       <input placeholder="E-mail adresa" v-model="user.info.email"
                         class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4 py-2"
                         required="required" type="email" name="integration[shop_name]" id="integration_shop_name">
                     </div>
                     <div class="grid grid-cols-2 mt-4">
-                      <div class="px-4 py-2 font-semibold"> Datum rodjenja:</div>
+                      <div class="px-4 py-2 font-semibold"> Datum rođenja:</div>
                       <input placeholder="Datum rodjenja..." v-model="user.info.date_naissance"
                         class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-3  py-2"
                         required="required" type="text" name="integration[shop_name]" id="integration_shop_name">
@@ -109,7 +108,7 @@
                   </div>
                 </div>
                 <button type="submit"
-                  class="block w-full border text-blue-800 text-sm font-semibold rounded-lg hover:bg-teal-100 focus:outline-none focus:shadow-outline focus:bg-gray-100 hover:shadow-xs p-3 my-4">Azuriraj podatke o sebi!
+                  class="block w-full border text-blue-800 text-sm font-semibold rounded-lg hover:bg-teal-100 focus:outline-none focus:shadow-outline focus:bg-gray-100 hover:shadow-xs p-3 my-4">Ažuriraj podatke o sebi!
                 </button>
               </div>
             </form>

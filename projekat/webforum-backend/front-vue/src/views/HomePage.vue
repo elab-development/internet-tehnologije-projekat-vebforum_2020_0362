@@ -4,7 +4,7 @@
     <main class=" overflow-x-hidden overflow-y-auto bg-gray-100">
 
       <div v-if="msgAdd" class="bg-green-100 rounded-lg py-5 px-6 mb-4 text-base text-green-700 mb-3" role="alert">
-        Uspesno objavljeno! </div>
+        Uspešno objavljeno! </div>
   
   
   
@@ -24,7 +24,7 @@
           <div class="flex">
   
             <div class="flex-1 m-2">
-              <h2 class="px-4 py-2 text-xl font-semibold text-black">Napisi objavu</h2>
+              <h2 class="px-4 py-2 text-xl font-semibold text-black">Napiši objavu</h2>
             </div>
             <div class="flex-1 px-4 py-2 m-2">
             </div>
@@ -52,7 +52,7 @@
   
               <div class="flex-1 px-2 pt-2 mt-2">
                 <textarea v-model="postData.sjt_post" class=" bg-transparent text-gray-400 font-medium text-lg w-full"
-                  rows="2" cols="50" placeholder="Napisi objavu koja je direktno upucena navedenoj kategoriji" required></textarea>
+                  rows="2" cols="50" placeholder="Napiši objavu koja je direktno upućena navedenoj kategoriji..." required></textarea>
               </div>
             </div>
   
@@ -215,7 +215,7 @@
       toggleModal: function () {
         this.showModal = !this.showModal;
       },
-      // get all gategorie
+      // get all categories
   
       setCategories() {
         store

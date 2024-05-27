@@ -39,21 +39,21 @@
             <input placeholder="E-mail adresa... " v-model="user.email"
                 class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4"
                 required="required" type="email" name="integration[shop_name]" id="integration_shop_name">
-                <p class="text-red text-xs hidden">Obavezno polje.</p>
+                <p class="text-red text-xs hidden">Obavezno polje</p>
         </div>
         <div class="mb-3 space-y-2 w-full text-xs">
-            <label class="font-semibold text-gray-600 py-2">Datum rodjenja <abbr title="required">*</abbr></label>
+            <label class="font-semibold text-gray-600 py-2">Datum rođenja <abbr title="required">*</abbr></label>
             <input placeholder="Datum rodjenja..." v-model="user.date_naissance"
                 class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4"
                 required="required" type="date" name="integration[shop_name]" id="integration_shop_name">
-                <p class="text-red text-xs hidden">Obavezno polje.</p>
+                <p class="text-red text-xs hidden">Obavezno polje</p>
         </div>
         <div class="mb-3 space-y-2 w-full text-xs">
             <label class="font-semibold text-gray-600 py-2">Password naloga <abbr title="required">*</abbr></label>
             <input placeholder="Password..." v-model="user.pass"
                 class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded-lg h-10 px-4"
                 required="required" type="password" name="integration[shop_name]" id="integration_shop_name">
-                <p class="text-red text-xs hidden">Obavezno polje.</p>
+                <p class="text-red text-xs hidden">Obavezno polje</p>
         </div>
         <div class="flex items-center justify-between">
             
